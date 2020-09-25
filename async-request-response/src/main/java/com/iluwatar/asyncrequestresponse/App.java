@@ -51,7 +51,7 @@ class Client {
   public void ready() {
     logger.info("Submitting a new job");
     submitMessage();
-    System.exit(0);
+//    System.exit(0);
   }
 
   public void submitMessage() {

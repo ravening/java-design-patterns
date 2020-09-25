@@ -37,11 +37,11 @@ public class AsyncProcessingBackgroundWorker {
   @Async
   public void processJob(String jobId) throws URISyntaxException {
     // Sleep for 10 seconds to imitate long running job
-    Random random = new Random(10);
-    int sleepTime = random.nextInt();
+    Random random = new Random();
+    int sleepTime = random.nextInt(10);
     logger.info("sleeping for {}", sleepTime);
     try {
-      Thread.sleep(10000);
+      Thread.sleep(sleepTime * 1000);
     } catch (Exception e) {}
 
     Message message = messageMap.get(jobId);
